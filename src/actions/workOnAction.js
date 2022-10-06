@@ -1,14 +1,16 @@
 import { ADD, UPDATE, DELETE } from "./actionType";
 
-export const addHabits = (text) =>({
+export const addHabits = (habit) =>({
     type: ADD,
-    payload: text
+    payload: habit
 })
 
-export const updateHabits = () =>({
-    type: UPDATE
+export const updateHabits = (id) =>({
+    type: UPDATE,
+    payload: id
 })
 
-export const deleteHabits = () =>({
-    type: DELETE
+export const deleteHabits = (id) =>({
+    type: DELETE,
+    payload: id
 })
