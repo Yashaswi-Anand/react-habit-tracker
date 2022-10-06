@@ -1,14 +1,19 @@
 
 import './App.css';
+import Home from './components/Home';
+import WeekReport from './components/WeekReport';
+import { Routes, Route } from "react-router-dom"
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Habbit tracker
-      </header>
+      <Routes>
+        <Route path="/" element={ <Home/> } />
+        <Route path="/weeklyreport" element={ <WeekReport/> } />
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
