@@ -1,4 +1,4 @@
-import { ADD, UPDATE, DELETE } from "./actionType";
+import { ADD, UPDATE, DELETE, UPDATE_STATUS_7DAYS } from "./actionType";
 
 export const addHabits = (habit) =>({
     type: ADD,
@@ -13,4 +13,10 @@ export const updateHabits = (id) =>({
 export const deleteHabits = (id) =>({
     type: DELETE,
     payload: id
+})
+
+export const updateHabitStatusOfPastSevenDays = (index, id) =>({
+    type: UPDATE_STATUS_7DAYS,
+    index: index,
+    id: id
 })

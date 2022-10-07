@@ -6,16 +6,21 @@ import { addHabits, deleteHabits, updateHabits } from '../actions/workOnAction';
 
 function Home() {
 
+  // selector hook
   const habit = useSelector(state => state.reducer)
   console.log(habit);
+  
+  // dispatch hooks
   const dispatch = useDispatch();
 
   const [inputHabit, setInputHabit] = useState("");
 
+  // handle input and save in use state
   const handleChange = (e) => {
     setInputHabit(e.target.value)
   }
 
+  // add habits
   const onAddHabit = () => {
     const dateArray = [];
     const status = [];
