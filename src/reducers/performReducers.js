@@ -5,13 +5,13 @@ const initalState = [
         habit: "Reading book",
         id: 758,
         status: ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'],
-        date: ['Oct 07 2022', 'Oct 06 2022', 'Oct 05 2022', 'Oct 04 2022', 'Oct 03 2022', 'Oct 02 2022', 'Oct 01 2022']
+        date: [ 'Oct 08 2022', 'Oct 07 2022', 'Oct 06 2022', 'Oct 05 2022', 'Oct 04 2022', 'Oct 03 2022', 'Oct 02 2022']
     },
     {
         habit: "Music",
         id: 908,
         status: ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'],
-        date: ['Oct 07 2022', 'Oct 06 2022', 'Oct 05 2022', 'Oct 04 2022', 'Oct 03 2022', 'Oct 02 2022', 'Oct 01 2022']
+        date: [ 'Oct 08 2022', 'Oct 07 2022', 'Oct 06 2022', 'Oct 05 2022', 'Oct 04 2022', 'Oct 03 2022', 'Oct 02 2022']
     }
 ]
 

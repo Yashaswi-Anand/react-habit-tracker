@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { addHabits, deleteHabits, updateHabits } from '../actions/workOnAction';
 import '../Home.css'
-
+import { success} from '../Toast'
 
 function Home() {
 
@@ -40,18 +40,21 @@ function Home() {
     }
     dispatch(addHabits(habit))
     setInputHabit("");
+    success('Habit added successfully !!!')
   }
 
   // delete habit
   const onDeleteHabit = (id) => {
     // console.log(id);
     dispatch(deleteHabits(id))
+    success('Habit deleted successfully !!!')
   }
 
   // edit status of habit
   const onEditHabit = (id) => {
     // console.log(id);
     dispatch(updateHabits(id))
+    success('Status updated !!!')
   }
 
   return (

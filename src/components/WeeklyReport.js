@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateHabitStatusOfPastSevenDays } from '../actions/workOnAction';
 import '../WeeklyReport.css'
+import {success} from '../Toast'
 
 function WeekReport() {
 
@@ -11,6 +12,7 @@ function WeekReport() {
   const onEditStatusIndex = (index, id) => {
     // console.log("weekly", index,id);
     dispatch(updateHabitStatusOfPastSevenDays(index, id))
+    success('Status updated !!!')
   }
 
   const date = (day) => {
