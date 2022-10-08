@@ -24,6 +24,10 @@ This application is a just a tool that track your daily habits, to build good ha
 - Redux
 
 ## Project Demo
+Home
+![image](https://github.com/Yashaswi-Anand/react-habit-tracker/blob/master/screenshots/home.png)
+Weekly Report
+![image](https://github.com/Yashaswi-Anand/react-habit-tracker/blob/master/screenshots/weeklyreport.png)
 
 
 ## Deployment
