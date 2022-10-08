@@ -2,10 +2,16 @@ import { ADD, UPDATE, DELETE, UPDATE_STATUS_7DAYS } from '../actions/actionType'
 
 const initalState = [
     {
-        habit: "book",
+        habit: "Reading book",
         id: 758,
-        status: ['NONE','NONE','NONE','NONE','NONE','NONE','NONE'],
-        date:['Oct 07 2022', 'Oct 06 2022', 'Oct 05 2022', 'Oct 04 2022', 'Oct 03 2022', 'Oct 02 2022', 'Oct 01 2022']
+        status: ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'],
+        date: ['Oct 07 2022', 'Oct 06 2022', 'Oct 05 2022', 'Oct 04 2022', 'Oct 03 2022', 'Oct 02 2022', 'Oct 01 2022']
+    },
+    {
+        habit: "Music",
+        id: 908,
+        status: ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'],
+        date: ['Oct 07 2022', 'Oct 06 2022', 'Oct 05 2022', 'Oct 04 2022', 'Oct 03 2022', 'Oct 02 2022', 'Oct 01 2022']
     }
 ]
 
@@ -38,7 +44,7 @@ export default function performReducer(state = initalState, action) {
             var data = [...state]
             data = data.filter(ele => ele.id !== action.payload)
             return data
-        
+
         case UPDATE_STATUS_7DAYS:
             var data = [...state]
             var habitItem = data.find(ele => ele.id === action.id)
@@ -54,7 +60,7 @@ export default function performReducer(state = initalState, action) {
             const itemIndex = data.findIndex(ele => ele.id === action.id)
             data[itemIndex] = habitItem
             return data
-            
+
         default:
             return state
     }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { addHabits, deleteHabits, updateHabits } from '../actions/workOnAction';
+import '../Home.css'
 
 
 function Home() {
@@ -9,7 +10,7 @@ function Home() {
   // selector hook
   const habit = useSelector(state => state.reducer)
   console.log(habit);
-  
+
   // dispatch hooks
   const dispatch = useDispatch();
 
@@ -48,36 +49,53 @@ function Home() {
   }
 
   // edit status of habit
-  const onEditHabit = (id) =>{
+  const onEditHabit = (id) => {
     // console.log(id);
     dispatch(updateHabits(id))
   }
 
   return (
     <div>
-      <div>
-        <Link to="/weeklyreport"> Weekly Report</Link>
+
+      <div class="sidebar">
+        <a class="active fs-4 heading-text" href="#home">ADD HABIT</a>
+
+        <div>
+          <input
+            type='text'
+            placeholder='Enter habit'
+            value={inputHabit}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+
+        <div><button className='add-btn' onClick={() => onAddHabit()}><h5>Add</h5></button></div>
+
+        <div><Link to="/weeklyreport"><h4 className='wklyrept'>Goto Weekly Report</h4></Link></div>
       </div>
 
-      <input
-        type='text'
-        placeholder='Enter habit'
-        value={inputHabit}
-        onChange={(e) => handleChange(e)}
-      />
+      <div class="content">
+        <div><h3 className='m-3 heading-text'>Habit Tracker</h3></div>
 
-      <button onClick={() => onAddHabit()}>Add</button>
+        {habit.length === 0
+          ? "Data is empty"
+          : (habit.map((item, index) => (
+            <div className='container'>
+              <div className='row' key={item.id}>
+                <div className='col-1 fs-3 p-1 ms-3 text-black'>{index + 1}.</div>
+                <div className='col-3 fs-3 p-1 habit-text'>{item.habit}</div>
+                <div className='col-4 fs-4 p-1' onClick={() => onEditHabit(item.id)} >
+                  {item.status[0] == "DONE" ? <i className="fa-solid fa-circle-check text-success"></i>
+                    : item.status[0] == "NOT-DONE" ? <i className="fa-solid fa-circle-xmark text-warning"></i>
+                      : <i className="fa-solid fa-circle-minus text-danger"></i>}
+                </div>
+                <div className='col-3 p-1'><i onClick={() => onDeleteHabit(item.id)} className="fa-solid fa-trash-can fs-4 text-danger"></i></div>
+              </div>
+            </div>
+          )))
+        }
+      </div>
 
-      {habit.length === 0
-        ? "Data is empty"
-        : (habit.map(item => (
-          <div className='row mt-3 ms-5 ' key={item.id}>
-            <div className='col-3 fs-6 text-align'>{item.habit}</div>
-            <div className='col-3' onClick={() => onEditHabit(item.id)} > {item.status[0]}</div>
-            <div className='col-3'><i onClick={() => onDeleteHabit(item.id)} className="fa-solid fa-trash-can fs-6"></i></div>
-          </div>
-        )))
-      }
     </div>
   )
 }

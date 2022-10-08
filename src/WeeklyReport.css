@@ -1,0 +1,26 @@
+.linearGradient {
+    background: linear-gradient(45deg, whitesmoke, gray);
+}
+
+.habit-text-wr{
+    color: darkblue;
+    font-family: cursive;
+    text-align: start;
+    background-color: whitesmoke;
+}
+
+.heading-weekly-report{
+    color:indigo;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+
+.home-btn{
+    text-decoration: none;
+    color: green;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+    font-size: x-large;
+}
+
