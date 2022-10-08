@@ -15,7 +15,7 @@ This application is a just a tool that track your daily habits, to build good ha
 - One default user and attach habits to the user.
 
 ## Routes and how to start
-- Go to link: [Project Link]()
+- Go to link: [Project Link](https://react-habitt-tracker.netlify.app/)
 - Add habits and view habits:  /
 - View all past 7 days habits: /weeklyreport
 
@@ -30,3 +30,4 @@ This application is a just a tool that track your daily habits, to build good ha
 - Netlify
 
 ## Project link
+https://react-habitt-tracker.netlify.app/
